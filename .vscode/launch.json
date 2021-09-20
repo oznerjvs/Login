@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Proyecto_login_mta-Login",
+      "name": "Run Login-Login",
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/proyecto-login-mta-approuter/node_modules/@sap/html5-repo-mock/index.js",
@@ -16,10 +16,10 @@
       "env": {
         "PORT": "6004",
         "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
-        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Proyecto_login_mta/Login\"}"
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/Login/Login\"}"
       },
-      "envFile": "${workspaceFolder}/Login/.env5",
-      "preLaunchTask": "Build Proyecto_login_mta"
+      "envFile": "${workspaceFolder}/Login/.env6",
+      "preLaunchTask": "Build Login"
     }
   ]
 }

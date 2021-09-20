@@ -18,7 +18,7 @@ sap.ui.define([
                     jQuery.ajax({
 
                     url: "sapapirest_logali/", 
-                    dataType: 'script',
+                    dataType: 'json',
                     data:{
                         destination: "get_resource",
                         user_id: user,
@@ -28,7 +28,7 @@ sap.ui.define([
                     success: function(data) {
                         //Login correcto
                         if(data.rc == "0"){
-                            this.getView().getModel("oViewModel").setProperty("/userData",data.token); 
+                            this.getView().getModel("oViewModel").setProperty("/userData",data.data); 
                             this.getView().getModel("oViewModel").setProperty("/logged",true);           
                         }else{
                             sap.m.MessageToast.show(data.msg);
@@ -155,7 +155,7 @@ sap.ui.define([
                     jQuery.ajax({
 
                     url: "sapapirest_logali/", 
-                    dataType: 'script',
+                    dataType: 'json',
                     data:{
                         destination: "login",
                         user_name: user_name,//"admin",
@@ -277,17 +277,18 @@ sap.ui.define([
                 if(dataRegister.user_name  && dataRegister.password && dataRegister.passwordCopy && dataRegister.first_name && dataRegister.last_name && dataRegister.telephone && dataRegister.email){
                     ok = true;
                 }else{
-                    sap.m.MessageToast.show(oResourceBundle.getText("Todos los campos son obligatorios"))
+                    sap.m.MessageToast.show(oResourceBundle.getText("todosCamposObligatorios"))
                 }
                 //Se comprueba si la password coincide
                 if(dataRegister.password !== dataRegister.passwordCopy){
                     ok = false;
+                    sap.m.MessageToast.show(oResourceBundle.getText("contraseniasNoIguales"))
                 }
                 if(ok){
                     jQuery.ajax({
 
                         url: "sapapirest_logali/", 
-                        dataType: 'script',
+                        dataType: 'json',
                         data:{
                             destination: "register",
                             user_name: dataRegister.user_name,
@@ -326,7 +327,7 @@ sap.ui.define([
                 jQuery.ajax({
 
                         url: "sapapirest_logali/", 
-                        dataType: 'script',
+                        dataType: 'json',
                         data:{
                             destination: "logout",
                             user_id : user

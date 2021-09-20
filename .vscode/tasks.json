@@ -8,6 +8,14 @@
       "options": {
         "cwd": "${workspaceFolder}/proyecto-login-mta-approuter"
       }
+    },
+    {
+      "label": "Build Login",
+      "type": "shell",
+      "command": "if [ ! -f ${workspaceFolder}/proyecto-login-mta-approuter/node_modules/@sap/html5-repo-mock/index.js ] || [ ! -f ${workspaceFolder}/proyecto-login-mta-approuter/node_modules/@sap/approuter/approuter.js ]; then npm i @sap/approuter && npm i @sap/html5-repo-mock; fi",
+      "options": {
+        "cwd": "${workspaceFolder}/proyecto-login-mta-approuter"
+      }
     }
   ]
 }

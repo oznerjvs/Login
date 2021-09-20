@@ -8,9 +8,8 @@
     {
       "authenticationType": "none",
       "csrfProtection": false,
-      "source": "^Northwind/V2/Northwind/Northwind.svc/(.*)$",
-      "destination": "Northwind",
-      "target": "$1"
+      "source": "^/V2/Northwind/Northwind.svc/",
+      "destination": "Northwind"
     },
     {
       "authenticationType": "none",

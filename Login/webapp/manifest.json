@@ -16,8 +16,8 @@
       "version": "1.40.12"
     },
     "dataSources": {
-      "Northwind.svc": {
-        "uri": "Northwind/V2/Northwind/Northwind.svc/",
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
         "type": "OData",
         "settings": {
           "odataVersion": "2.0",
@@ -70,7 +70,7 @@
         }
       },
       "northwind": {
-        "dataSource": "Northwind.svc",
+        "dataSource": "mainService",
         "preload": true,
         "settings": {
           "defaultBindingMode": "TwoWay",

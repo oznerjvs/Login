@@ -13,8 +13,8 @@
     
 </customHeader>
 					<content>
-                        <Panel headerText="{i18n>misProductos}" visible="{= ${oViewModel>/logged} === true}">
-                            <Table items="{northwind>/Products}">
+                        <Panel expandable="true" headerText="{i18n>misProductos}" visible="{= ${oViewModel>/logged} === true}">
+                            <Table items="{northwind>/Products}" growing="true" growingThreshold="5">
                                 <columns>
                                     <Column>
                                         <header>
@@ -46,7 +46,7 @@
                             </Table>
                         </Panel>
                         <Panel headerText="{i18n>productos}">
-                            <Table items="{northwind>/Products}">
+                            <Table items="{northwind>/Products}" growing="true" growingThreshold="5">
                                 <columns>
                                     <Column>
                                         <header>
