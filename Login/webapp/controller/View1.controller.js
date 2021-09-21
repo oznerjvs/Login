@@ -289,6 +289,7 @@ sap.ui.define([
 
                         url: "sapapirest_logali/", 
                         dataType: 'json',
+                        method :'POST',
                         data:{
                             destination: "register",
                             user_name: dataRegister.user_name,
@@ -304,7 +305,7 @@ sap.ui.define([
                             if(data.rc == "0"){
                                 sessionStorage.setItem("user",data.data.user_id);
                                 sessionStorage.setItem("token",data.token.token);
-                                this.getView().getModel("oViewModel").setProperty("/userData",data.token); 
+                                this.getView().getModel("oViewModel").setProperty("/userData",data.data); 
                                 this.getView().getModel("oViewModel").setProperty("/logged",true);           
                             }else{
                                 sap.m.MessageToast.show(data.msg);
@@ -328,6 +329,7 @@ sap.ui.define([
 
                         url: "sapapirest_logali/", 
                         dataType: 'json',
+                        
                         data:{
                             destination: "logout",
                             user_id : user
